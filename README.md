@@ -16,6 +16,11 @@ This work is actually submitted and under review at [...]
 
 The system consists of several modular ROS2 packages divided into agent-specific Docker environments:
 
+
+# GCS 
+
+add link with instructions
+
 # UAV agent
 
 https://github.com/Prisma-Drone-Team/sitl_utils
