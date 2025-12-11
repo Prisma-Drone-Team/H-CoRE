@@ -22,10 +22,7 @@ The system consists of several modular ROS2 packages divided into agent-specific
 add link with instructions
 
 # UAV agent
-
-https://github.com/Prisma-Drone-Team/sitl_utils
-
-Branch: pdt25
+https://github.com/Prisma-Drone-Team/uav_motion_stack.git
 
 # UGV agent
 
