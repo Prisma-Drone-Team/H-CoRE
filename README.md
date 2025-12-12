@@ -18,8 +18,7 @@ The system consists of several modular ROS2 packages divided into agent-specific
 
 
 # GCS 
-
-add link with instructions
+https://github.com/Prisma-Drone-Team/leonardo_managers
 
 # UAV agent
 https://github.com/Prisma-Drone-Team/uav_motion_stack.git
