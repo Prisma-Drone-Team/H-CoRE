@@ -25,7 +25,7 @@ https://github.com/Prisma-Drone-Team/uav_motion_stack.git
 
 # UGV agent
 
-add link with instructions
+https://github.com/Prisma-Drone-Team/Rover-Navigation.git
 
 # PTZ camera agent
 
