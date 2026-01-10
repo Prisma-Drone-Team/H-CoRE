@@ -29,5 +29,5 @@ https://github.com/Prisma-Drone-Team/Rover-Navigation.git
 
 # PTZ camera agent
 
-add link with instructions
+https://github.com/Prisma-Drone-Team/ptz_docker_sw
 
