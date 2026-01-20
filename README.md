@@ -16,17 +16,17 @@ Supplementary video showcasing the proposed framework and the corresponding expe
 
 The system consists of several modular ROS2 packages divided into agent-specific Docker environments:
 
-# GCS 
+### GCS 
 https://github.com/Prisma-Drone-Team/leonardo_managers
 
-# UAV agent
+### UAV agent
 https://github.com/Prisma-Drone-Team/uav_motion_stack.git
 
-# UGV agent
+### UGV agent
 
 https://github.com/Prisma-Drone-Team/Rover-Navigation.git
 
-# PTZ camera agent
+### PTZ camera agent
 
 https://github.com/Prisma-Drone-Team/ptz_docker_sw
 
