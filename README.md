@@ -33,4 +33,4 @@ https://github.com/Prisma-Drone-Team/ptz_docker_sw
 ## Tutorials
 H-CoRE framework is fully open-source and available both in plug-and-play simulation and ready to be deployed on actual hardware. 
 
-Tutorials to set up H-CoRE are available at: tutorials/sitl_setup.md 
+Tutorials to set up H-CoRE are available at: [`tutorials/sitl_setup.md `](tutorials/sitl_setup.md )
