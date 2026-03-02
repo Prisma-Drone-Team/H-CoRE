@@ -46,9 +46,10 @@ H-CoRE framework is fully open-source and available both in plug-and-play simula
 
 ### Available Documentation
 
-- **Complete H-CoRE Setup**: [`tutorials/sitl_setup.md`](tutorials/sitl_setup.md) - Comprehensive tutorial covering both single-agent and multi-robot simulation environments
+- **Complete H-CoRE Simulation Setup**: [`tutorials/sitl_setup.md`](tutorials/sitl_setup.md) - Comprehensive tutorial covering both single-agent and multi-robot simulation environments
+- **H-CoRE Hardware Deployment**: [`tutorials/hardware_deployment.md`](tutorials/hardware_deployment.md) - Complete guide for real-world hardware deployment of UAV, UGV, and PTZ agents
 - **Individual Agent Setup**: Each repository README provides detailed setup instructions for standalone operation
-- **Multi-Robot Coordination**: Integration guidelines available in individual repositories and main tutorial  
+- **Multi-Robot Coordination**: Integration guidelines available in individual repositories and main tutorials
 - **Hardware Deployment**: Real-world implementation instructions in respective agent repositories
 
-The documentation ensures complete reproducibility of experimental setups for research and development purposes.
+The documentation ensures complete reproducibility of experimental setups for both simulation and hardware deployment in research and development environments.
