@@ -176,6 +176,11 @@ cd ~/docker_dev/rover_sim_motion_stack
 ./docker_run.sh rover_sim_image rover_container
 ```
 
+# Within the container, launch the rover simulation
+```bash
+ros2 launch rover_bringup rover_sim.launch
+```
+
 #### UGV Simulation Features
 
 The rover simulation includes:
@@ -209,6 +214,8 @@ The multi-robot simulation establishes communication between heterogeneous agent
 
 ### Starting Multi-Robot Simulation
 
+The multi-robot simulation requires coordinated launch of both UAV and UGV containers to establish the shared simulation environment.
+
 #### Step 1: Launch Multi-Robot UAV Container
 
 ```bash
@@ -218,18 +225,51 @@ cd ~/docker_dev/sitl_utils
 ./run_multi_cnt.sh
 ```
 
-#### Step 2: Initialize Multi-Robot Session
+#### Step 2: Initialize UAV Multi-Robot Session
 
-Within the UAV container:
+Within the UAV container, launch the multi-robot session which includes Gazebo world initialization:
 
 ```bash
-# Launch multi-robot simulation session
+# Launch multi-robot simulation session (includes Gazebo world setup)
 tmuxp load src/pkg/babyk_drone_manager/utils/multi_simulation.yml
 ```
 
-#### Step 3: Verify UGV Integration
+This TMUX session establishes the shared Gazebo Garden environment that both agents will operate in.
 
-The multi-robot TMUX configuration automatically launches the UGV simulation within the shared environment. The rover workspace is mounted from the external rover_sim_motion_stack repository, ensuring seamless integration.
+#### Step 3: Launch UGV Container
+
+In a separate terminal, launch the UGV container in multi-robot configuration:
+
+```bash
+cd ~/docker_dev/rover_sim_motion_stack
+
+# Ensure you're on the multi-robot branch
+git checkout multi-robot
+
+# Launch UGV container with multi-robot configuration
+./docker_run.sh rover_sim_image rover_multi_container
+```
+
+#### Step 4: Initialize UGV Navigation Stack
+
+Within the UGV container, launch the rover navigation and control stack:
+
+```bash
+# Start the UGV navigation stack for multi-robot operation
+ros2 launch rover_bringup rover_sim.launch
+```
+
+#### Step 5: Verify Multi-Robot Communication
+
+Confirm that both agents are communicating through the shared ROS2 domain:
+
+```bash
+# Check active nodes from both agents
+ros2 node list
+
+# Verify topic communication between agents
+ros2 topic list | grep -E "(uav|ugv)"
+```
 
 ### Multi-Robot Coordination Features
 
