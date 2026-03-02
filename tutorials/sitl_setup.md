@@ -2,7 +2,8 @@
 
 This tutorial provides comprehensive instructions for setting up and running the H-CoRE (Heterogeneous Cooperative multi-Robot Execution) framework simulation environment. The system enables simulation of heterogeneous robotic agents including UAVs (Unmanned Aerial Vehicles), UGVs (Unmanned Ground Vehicles) and PTZ (Pan-Tilt-Zoom Camera) in both single-agent and multi-agent configurations.
 
-![H-CoRE Multi-Robot Simulation](../figs/h-core_simu.png)
+<img src="../figs/h-core_simu.png" alt="H-CoRE Multi-Robot Simulation" width="70%">
+
 *Figure 1: H-CoRE Framework simulation showing cooperative UAV and UGV agents in Gazebo Garden environment*
 
 ## Table of Contents
