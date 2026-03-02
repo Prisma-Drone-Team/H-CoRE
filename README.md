@@ -2,6 +2,10 @@
 
 This repository contains tools and configurations for H-CoRE (Heterogeneous Cooperative multi-Robot Execution) framework simulation and hardware deployment integrated with ROS2 Humble in Docker environments.
 
+<div align="center">
+<img src="../figs/logo_prisma.png" alt="H-CoRE" width="50%">
+</div>
+
 ## Article
 The description of the single agents' architecture, the software integration, and the framework validation is described in the following article:
 
@@ -11,6 +15,30 @@ This work is actually submitted and under review at MDPI - Drones
 
 ## Video
 Supplementary video showcasing the proposed framework and the corresponding experimental validation is available at: https://youtu.be/VcLkpbIYOPw
+
+## Developers and License
+
+**Developed by**: Aerial Robotics Group - [PRISMA Lab](https://github.com/prisma-lab), University of Naples Federico II
+
+**Lead Developers**:
+- Simone D'Angelo (Corresponding author)
+- Francesca Pagano  
+- Riccardo Caccavale
+- Vincenzo Scognamiglio
+
+**License**: This software is **open-source** and freely available for research and educational purposes. 
+
+**Citation**: If you use this framework in your research, please cite the following paper:
+
+```bibtex
+@article{dangelo2024hcore,
+  title={H-CoRE: A Cooperative Framework for Heterogeneous Multi-Robot Exploration and Inspection},
+  author={D'Angelo, Simone and Pagano, Francesca and Caccavale, Riccardo and Scognamiglio, Vincenzo and De Crescenzo, Alessandro and Merone, Pasquale and Ciaravino, Stefano and Finzi, Alberto and Lippiello, Vincenzo},
+  journal={Drones (MDPI)},
+  year={2026},
+  note={Submitted, under review}
+}
+```
 
 ## Architecture Overview
 
