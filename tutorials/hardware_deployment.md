@@ -8,15 +8,6 @@ This tutorial provides comprehensive instructions for deploying the H-CoRE (Hete
 
 *Figure 1: H-CoRE Framework hardware deployment showing real UAV and UGV agents in operational environment*
 
-## Table of Contents
-
-1. [Hardware Architecture Overview](#hardware-architecture-overview)
-2. [System Requirements](#system-requirements)
-3. [Installation and Setup](#installation-and-setup)
-4. [Single Agent Hardware Deployment](#single-agent-hardware-deployment)
-5. [Multi-Robot Hardware Coordination](#multi-robot-hardware-coordination)
-6. [Ground Control Station Setup](#ground-control-station-setup)
-
 ## Hardware Architecture Overview
 
 The H-CoRE framework hardware deployment implements a distributed architecture where each agent operates as an autonomous unit with onboard computation while maintaining communication through a centralized Ground Control Station (GCS).
