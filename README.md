@@ -16,21 +16,39 @@ Supplementary video showcasing the proposed framework and the corresponding expe
 
 The system consists of several modular ROS2 packages divided into agent-specific Docker environments:
 
-### GCS 
-https://github.com/Prisma-Drone-Team/leonardo_managers
+### Ground Control Station (GCS) 
+**Repository**: https://github.com/Prisma-Drone-Team/leonardo_managers
 
 ### UAV agent
-https://github.com/Prisma-Drone-Team/uav_motion_stack.git
-
+**Repository**: https://github.com/Prisma-Drone-Team/uav_motion_stack.git
+The branch paper_stable contains modules and instruction for deploying both SITL and specific hardware configurations
 ### UGV agent
 
-https://github.com/Prisma-Drone-Team/Rover-Navigation.git
+#### Hardware deploy
+**Repository**: https://github.com/Prisma-Drone-Team/Rover-Navigation.git
 
-### PTZ camera agent
+#### SITL Simulation
+**Repository**: https://github.com/Prisma-Drone-Team/rover_sim_motion_stack.git  
+**Documentation**: Comprehensive navigation stack setup, autonomous exploration algorithms, and multi-robot coordination guidelines
 
-https://github.com/Prisma-Drone-Team/ptz_docker_sw
+### PTZ Camera Agent - Pan-Tilt-Zoom Camera System
+**Repository**: https://github.com/Prisma-Drone-Team/ptz_docker_sw  
+**Documentation**: Complete installation and configuration instructions for surveillance and inspection capabilities
+
+Each repository includes:
+- **Single-agent setup**: Standalone operation instructions for individual agent testing
+- **Multi-robot integration**: Configuration guidelines for cooperative multi-agent scenarios  
+- **Docker deployment**: Containerized environments for reproducible setups
+- **Hardware deployment**: Real-world implementation instructions (where applicable)
 
 ## Tutorials
-H-CoRE framework is fully open-source and available both in plug-and-play simulation and ready to be deployed on actual hardware. 
+H-CoRE framework is fully open-source and available both in plug-and-play simulation and ready to be deployed on actual hardware.
 
-Tutorials to set up H-CoRE are available at: [`tutorials/sitl_setup.md `](tutorials/sitl_setup.md )
+### Available Documentation
+
+- **Complete H-CoRE Setup**: [`tutorials/sitl_setup.md`](tutorials/sitl_setup.md) - Comprehensive tutorial covering both single-agent and multi-robot simulation environments
+- **Individual Agent Setup**: Each repository README provides detailed setup instructions for standalone operation
+- **Multi-Robot Coordination**: Integration guidelines available in individual repositories and main tutorial  
+- **Hardware Deployment**: Real-world implementation instructions in respective agent repositories
+
+The documentation ensures complete reproducibility of experimental setups for research and development purposes.
