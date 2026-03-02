@@ -8,17 +8,6 @@ This tutorial provides comprehensive instructions for setting up and running the
 
 *Figure 1: H-CoRE Framework simulation showing cooperative UAV and UGV agents in Gazebo Garden environment*
 
-## Table of Contents
-
-1. [Architecture Overview](#architecture-overview)
-2. [System Requirements](#system-requirements)
-3. [Installation and Setup](#installation-and-setup)
-4. [Single Agent Simulation](#single-agent-simulation)
-5. [Multi-Robot Simulation](#multi-robot-simulation)
-6. [Visualization with RViz](#visualization-with-rviz)
-7. [Troubleshooting](#troubleshooting)
-8. [Advanced Configuration](#advanced-configuration)
-
 ## Architecture Overview
 
 The H-CoRE framework implements a modular architecture with dockerized environments for each agent type, enabling seamless integration and isolated development:
