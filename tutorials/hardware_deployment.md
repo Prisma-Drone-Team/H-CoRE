@@ -35,6 +35,26 @@ The H-CoRE framework hardware deployment implements a distributed architecture w
 - **Communication**: WiFi 6 adapter with omnidirectional antenna
 - **Power System**: Li-Po battery 
 
+## Agent-specific deploy
+
+Guides for agent specific stack deploy is available in the following public repositories:
+
+### UAV agent
+
+https://github.com/Prisma-Drone-Team/uav_motion_stack.git
+
+### UGV agent
+
+https://github.com/Prisma-Drone-Team/Rover-Navigation.git
+
+## PTZ agent
+
+https://github.com/Prisma-Drone-Team/ptz_docker_sw
+
+## GCS
+
+https://github.com/Prisma-Drone-Team/leonardo_managers
+
 ## Support and Maintenance
 
 For technical support, hardware-specific issues, or deployment assistance:
