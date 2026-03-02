@@ -26,11 +26,9 @@ The branch paper_stable contains modules and instruction for deploying both SITL
 
 ### UGV agent
 
-#### Hardware deploy
-**Repository**: https://github.com/Prisma-Drone-Team/Rover-Navigation.git
+**Repository for Hardware deploy**: https://github.com/Prisma-Drone-Team/Rover-Navigation.git
 
-#### SITL Simulation
-**Repository**: https://github.com/Prisma-Drone-Team/rover_sim_motion_stack.git  
+**Repository SITL Simulation**: https://github.com/Prisma-Drone-Team/rover_sim_motion_stack.git  
 **Documentation**: Comprehensive navigation stack setup, autonomous exploration algorithms, and multi-robot coordination guidelines
 
 ### PTZ Camera Agent - Pan-Tilt-Zoom Camera System
