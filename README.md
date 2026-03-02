@@ -21,7 +21,9 @@ The system consists of several modular ROS2 packages divided into agent-specific
 
 ### UAV agent
 **Repository**: https://github.com/Prisma-Drone-Team/uav_motion_stack.git
+
 The branch paper_stable contains modules and instruction for deploying both SITL and specific hardware configurations
+
 ### UGV agent
 
 #### Hardware deploy
