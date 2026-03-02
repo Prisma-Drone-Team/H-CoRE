@@ -3,7 +3,7 @@
 This repository contains tools and configurations for H-CoRE (Heterogeneous Cooperative multi-Robot Execution) framework simulation and hardware deployment integrated with ROS2 Humble in Docker environments.
 
 <div align="center">
-<img src="../figs/logo_prisma.png" alt="H-CoRE" width="50%">
+<img src="../figs/logo_prisma.jpg" alt="H-CoRE" width="50%">
 </div>
 
 ## Article
