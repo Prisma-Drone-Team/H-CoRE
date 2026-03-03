@@ -47,6 +47,8 @@ The system consists of several modular ROS2 packages divided into agent-specific
 ### Ground Control Station (GCS) 
 **Repository**: https://github.com/Prisma-Drone-Team/leonardo_managers
 
+The main contest25 contains all the configuration files used for the hardware deploy and the experiments
+
 ### UAV agent
 **Repository**: https://github.com/Prisma-Drone-Team/uav_motion_stack.git
 
@@ -56,12 +58,16 @@ The branch paper_stable contains modules and instruction for deploying both SITL
 
 **Repository for Hardware deploy**: https://github.com/Prisma-Drone-Team/Rover-Navigation.git
 
+The main branch contains all the configuration files used for the hardware deploy and the experiments
+
 **Repository SITL Simulation**: https://github.com/Prisma-Drone-Team/rover_sim_motion_stack.git  
-**Documentation**: Comprehensive navigation stack setup, autonomous exploration algorithms, and multi-robot coordination guidelines
+
+Two branches are available: leonardo for stand-alone single robot simulation and multi-robot for multi-robot simulation
 
 ### PTZ Camera Agent - Pan-Tilt-Zoom Camera System
 **Repository**: https://github.com/Prisma-Drone-Team/ptz_docker_sw  
-**Documentation**: Complete installation and configuration instructions for surveillance and inspection capabilities
+
+The branch paper contains modules and instruction for deploying specific hardware configurations
 
 Each repository includes:
 - **Single-agent setup**: Standalone operation instructions for individual agent testing
