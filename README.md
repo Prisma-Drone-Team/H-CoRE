@@ -47,7 +47,7 @@ The system consists of several modular ROS2 packages divided into agent-specific
 ### Ground Control Station (GCS) 
 **Repository**: https://github.com/Prisma-Drone-Team/leonardo_managers
 
-The main contest25 contains all the configuration files used for the hardware deploy and the experiments
+The main branch "contest25" contains all the configuration files used for the hardware deploy and the experiments
 
 ### UAV agent
 **Repository**: https://github.com/Prisma-Drone-Team/uav_motion_stack.git
