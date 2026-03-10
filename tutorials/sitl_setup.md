@@ -53,17 +53,17 @@ All agents communicate through the ROS2 DDS middleware using domain ID 17 for si
 Clone the H-CoRE simulation repositories to your development workspace:
 
 ```bash
-# Create main development directory
-mkdir -p ~/docker_dev && cd ~/docker_dev
-
 # Clone H-CoRE main repository
-git clone https://github.com/Prisma-Drone-Team/H-CoRE.git
+git clone https://github.com/Prisma-Drone-Team/H-CoRE.git && cd H-CoRE
 
 # Clone UAV motion stack with SITL utilities
 git clone --recursive https://github.com/Prisma-Drone-Team/uav_motion_stack.git -b paper_stable sitl_utils
 
 # Clone UGV simulation stack
 git clone https://github.com/Prisma-Drone-Team/rover_sim_motion_stack.git
+
+# Clone PTZ simulation stack
+git clone --recursive https://github.com/Prisma-Drone-Team/ptz_docker_sw.git
 ```
 
 ### 2. UAV Simulation Environment Setup
@@ -71,7 +71,7 @@ git clone https://github.com/Prisma-Drone-Team/rover_sim_motion_stack.git
 Navigate to the UAV simulation directory and configure the environment:
 
 ```bash
-cd ~/docker_dev/sitl_utils
+cd ~/H-CoRE/sitl_utils
 
 # Clone PX4 Neabotics custom firmware (required for plug-and-play functionality)
 git clone --single-branch -b feature/diffgains_fix_servo_k \
@@ -87,7 +87,7 @@ docker build -t leo-img -f px4_humble_dockerfile.txt .
 Configure the ground vehicle simulation stack:
 
 ```bash
-cd ~/docker_dev/rover_sim_motion_stack
+cd ~/H-CoRE/rover_sim_motion_stack
 
 # Select appropriate branch based on simulation requirements
 # For standalone UGV simulation:
@@ -99,8 +99,23 @@ git checkout multi-robot
 # Build UGV Docker image
 ./docker_build.sh rover_sim_image
 ```
+### 4. PTZ Simulation Environment Setup
+```bash
+cd ~/H-CoRE/rover_sim_motion_stack
 
-### 4. Environment Configuration
+# Select appropriate branch based on simulation requirements
+# For standalone UGV simulation:
+git checkout paper
+
+# For multi-robot simulation:
+git checkout simulation
+
+# Build UGV Docker image
+./docker_build.sh
+
+```
+
+### 5. Environment Configuration
 
 Enable X11 forwarding for GUI applications:
 
@@ -121,7 +136,7 @@ The UAV simulation provides a complete PX4 SITL environment with autonomous navi
 #### Starting the UAV Simulation
 
 ```bash
-cd ~/docker_dev/sitl_utils
+cd ~/H-CoRE/sitl_utils
 
 # Launch UAV simulation container
 ./run_cnt.sh
@@ -159,7 +174,7 @@ The UGV simulation implements advanced autonomous navigation using the Navigatio
 #### Starting the UGV Simulation
 
 ```bash
-cd ~/docker_dev/rover_sim_motion_stack
+cd ~/H-CoRE/rover_sim_motion_stack
 
 # Launch UGV simulation with automatic initialization
 ./docker_run.sh rover_sim_image rover_container
@@ -188,6 +203,52 @@ Navigate the rover using:
 - **Exploration Mode**: Autonomous area coverage algorithms
 - **Manual Control**: Direct velocity commands via teleoperation nodes
 
+### PTZ (Pan-Tilt-Zoom) Camera Single-robot Simulation
+
+The PTZ camera simulation provides high-precision surveillance capabilities with full 3-DOF control and real-time zoom functionality.
+
+#### Starting the PTZ Simulation
+
+```bash
+cd H-CoRE/ptz_docker_sw
+
+# Run Docker container without GPU
+./docker_run.sh
+
+# Run Docker container with GPU
+./docker_run_gpu.sh 
+
+# Launch complete simulation environment including PTZ camera
+ros2 launch ptz_gz launch_sim.launch
+```
+
+The PTZ camera is automatically spawned in the Leonardo race environment waiting for a task. e.g.:
+
+ ```bash
+  ros2 topic pub --once /seed_pdt_camera/command std_msgs/msg/String "data: cover((1,0),(5,0),(5,3),(1,3),34,2,0:10:00)"
+
+
+  ros2 topic pub --once /seed_pdt_camera/command std_msgs/msg/String "data: watchto(goal2)"
+```
+
+#### PTZ Camera System Features
+
+The PTZ simulation includes:
+
+- **3-DOF Control**: Full pan, tilt, and zoom axis control with configurable limits
+- **Real-time Zoom**: CameraZoomPlugin with 1x to 125x magnification range  
+- **Dual Control Modes**: Position absolute and velocity-based control
+- **Visual Feedback**: Real-time camera view with field-of-view adjustment
+- **Hardware Integration**: Compatible with motion stack architecture for real PTZ systems
+
+#### PTZ Technical Specifications
+
+- **Pan Range**: ±170° with precision control
+- **Tilt Range**: ±90° vertical movement  
+- **Zoom Range**: 1x to 125x optical magnification
+- **Control Frequency**: 20Hz position updates for smooth motion
+- **Camera Resolution**: 1920x1080 HD video stream at 25 FPS
+
 ## Multi-Robot Simulation
 
 The multi-robot configuration enables cooperative behavior between UAV and UGV agents, demonstrating the full H-CoRE framework capabilities.
@@ -208,7 +269,7 @@ The multi-robot simulation requires coordinated launch of both UAV and UGV conta
 #### Step 1: Launch Multi-Robot UAV Container
 
 ```bash
-cd ~/docker_dev/sitl_utils
+cd ~/H-CoRE/sitl_utils
 
 # Start UAV container with multi-robot configuration
 ./run_multi_cnt.sh
@@ -223,14 +284,14 @@ Within the UAV container, launch the multi-robot session which includes Gazebo w
 tmuxp load src/pkg/babyk_drone_manager/utils/multi_simulation.yml
 ```
 
-This TMUX session establishes the shared Gazebo Garden environment that both agents will operate in.
+This TMUX session establishes the shared Gazebo Garden environment that the three agents will operate in.
 
 #### Step 3: Launch UGV Container
 
 In a separate terminal, launch the UGV container in multi-robot configuration:
 
 ```bash
-cd ~/docker_dev/rover_sim_motion_stack
+cd ~/H-CoRE/rover_sim_motion_stack
 
 # Ensure you're on the multi-robot branch
 git checkout multi-robot
@@ -246,6 +307,19 @@ Within the UGV container, launch the rover navigation and control stack:
 ```bash
 # Start the UGV navigation stack for multi-robot operation
 ros2 launch rover_bringup rover_sim.launch
+```
+#### Step 5: Launch PTZ Container
+```bash
+cd ~/H-CoRE/ptz_docker_sw
+
+# Ensure you're on the multi-robot branch
+git checkout simulation
+
+# Launch UGV container with multi-robot configuration
+./docker_run.sh
+
+export ROS_DOMAIN_ID=17
+ros2 launch ptz_manager ptz_navigation_stack.launch.py
 ```
 
 #### Step 5: Verify Multi-Robot Communication
