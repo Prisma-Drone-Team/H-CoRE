@@ -5,12 +5,12 @@ This repository contains tools and configurations for H-CoRE (Heterogeneous Coop
 ## Article
 The description of the single agents' architecture, the software integration, and the framework validation is described in the following article:
 
-Simone D’Angelo*, Francesca Pagano, Riccardo Caccavale, Vincenzo Scognamiglio, Alessandro De Crescenzo, Pasquale Merone, Stefano Ciaravino, Alberto Finzi, and Vincenzo Lippiello, "H-CoRE: A Cooperative Framework for Heterogeneous Multi-Robot Exploration and Inspection"
+D’Angelo, S., Pagano, F., Caccavale, R., Scognamiglio, V., De Crescenzo, A., Merone, P., Ciaravino, S., Finzi, A., & Lippiello, V. (2026). H-CoRE: A Cooperative Framework for Heterogeneous Multi-Robot Exploration and Inspection. Drones, 10(4), 232. https://doi.org/10.3390/drones10040232
 
-This work is actually submitted and under review at MDPI - Drones 
+This work is published on the MDPI - Drones journal and is available online as open access. 
 
 ## Video
-Supplementary video showcasing the proposed framework and the corresponding experimental validation is available at: https://youtu.be/VcLkpbIYOPw
+Supplementary video showcasing the proposed framework and the corresponding experimental validation is available at: https://www.youtube.com/watch?v=32JMqU83qIw
 
 ## Developers and License
 
@@ -31,12 +31,18 @@ Supplementary video showcasing the proposed framework and the corresponding expe
 **Citation**: If you use this framework in your research, please cite the following paper:
 
 ```bibtex
-@article{dangelo2024hcore,
-  title={H-CoRE: A Cooperative Framework for Heterogeneous Multi-Robot Exploration and Inspection},
-  author={D'Angelo, Simone and Pagano, Francesca and Caccavale, Riccardo and Scognamiglio, Vincenzo and De Crescenzo, Alessandro and Merone, Pasquale and Ciaravino, Stefano and Finzi, Alberto and Lippiello, Vincenzo},
-  journal={Drones (MDPI)},
-  year={2026},
-  note={Submitted, under review}
+
+@Article{drones10040232,
+AUTHOR = {D’Angelo, Simone and Pagano, Francesca and Caccavale, Riccardo and Scognamiglio, Vincenzo and De Crescenzo, Alessandro and Merone, Pasquale and Ciaravino, Stefano and Finzi, Alberto and Lippiello, Vincenzo},
+TITLE = {H-CoRE: A Cooperative Framework for Heterogeneous Multi-Robot Exploration and Inspection},
+JOURNAL = {Drones},
+VOLUME = {10},
+YEAR = {2026},
+NUMBER = {4},
+ARTICLE-NUMBER = {232},
+URL = {https://www.mdpi.com/2504-446X/10/4/232},
+ISSN = {2504-446X},
+DOI = {10.3390/drones10040232}
 }
 ```
 
